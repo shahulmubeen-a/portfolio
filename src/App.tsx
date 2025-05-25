@@ -1,5 +1,7 @@
-// React is imported for JSX transformation even if not explicitly used
+/** @jsx React.createElement */
 import React from 'react';
+const _unused = React.version;
+
 import Navbar from './components/layout/Navbar';
 import Header from './components/layout/Header';
 import SkillsSection from './components/sections/SkillsSection';
