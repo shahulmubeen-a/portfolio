@@ -1,5 +1,5 @@
+// React is imported for JSX transformation even if not explicitly used
 import React from 'react';
-// React is imported for JSX transformation
 import Navbar from './components/layout/Navbar';
 import Header from './components/layout/Header';
 import SkillsSection from './components/sections/SkillsSection';
