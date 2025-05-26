@@ -3,37 +3,52 @@ import { workExperience } from '../../data/portfolioData';
 
 const WorkExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="py-20 px-4 md:px-8 bg-secondary-50">
+    <section id="experience" className="py-16 px-4 md:px-8 bg-gray-50">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-16 section-title text-secondary-900">Work Experience</h2>
+        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-12 text-center text-secondary-900">WORK EXPERIENCE</h2>
         
-        <div className="space-y-12">
+        <div className="space-y-4"> {/* Reduced from space-y-8 to space-y-4 */}
           {workExperience.map((job, index) => (
             <div 
-              key={`${job.company}-${index}`} 
-              className="timeline-item animate-fade-up"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              key={index} 
+              className="relative overflow-hidden rounded-lg shadow-md bg-white"
             >
-              <div className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+              {/* Background image with low opacity */}
+              {job.backgroundImage && (
+                <div 
+                  className="absolute inset-0 z-0 opacity-10" 
+                  style={{
+                    backgroundImage: `url(${job.backgroundImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                ></div>
+              )}
+              
+              <div className="relative z-10 p-6 md:p-8">
+                <div className="flex flex-col md:flex-row justify-between mb-3"> {/* Reduced from mb-4 to mb-3 */}
                   <div>
-                    <h3 className="text-2xl font-serif font-bold text-secondary-900">{job.title}</h3>
-                    <h4 className="text-xl text-primary-700 font-medium mb-2">{job.company}</h4>
+                    <h3 className="text-2xl font-bold text-primary-700">{job.title}</h3>
+                    <p className="text-xl font-semibold text-secondary-700">{job.company}</p>
                   </div>
-                  <div className="mt-2 md:mt-0 md:text-right">
-                    <span className="text-secondary-600 font-medium">{job.period}</span>
-                    <p className="text-secondary-500">{job.location}</p>
+                  <div className="mt-2 md:mt-0 text-right">
+                    <p className="text-lg text-gray-600">{job.period}</p>
+                    <p className="text-gray-500">{job.location}</p>
                   </div>
                 </div>
                 
-                <p className="text-secondary-700 mb-4">{job.description}</p>
+                <p className="text-lg mb-3">{job.description}</p> {/* Reduced from mb-4 to mb-3 */}
                 
-                <h5 className="text-lg font-serif font-semibold mb-3 text-secondary-800">Key Achievements:</h5>
-                <ul className="list-disc pl-5 space-y-2">
-                  {job.achievements.map((achievement, i) => (
-                    <li key={i} className="text-secondary-700">{achievement}</li>
-                  ))}
-                </ul>
+                {job.achievements && job.achievements.length > 0 && (
+                  <div>
+                    <h4 className="text-lg font-semibold mb-1">Key Achievements:</h4> {/* Reduced from mb-2 to mb-1 */}
+                    <ul className="list-disc pl-5 space-y-1">
+                      {job.achievements.map((achievement, i) => (
+                        <li key={i} className="text-gray-700">{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           ))}

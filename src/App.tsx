@@ -1,27 +1,33 @@
-/** @jsx React.createElement */
+// React is imported for JSX transformation even if not explicitly used
 import React from 'react';
-const _unused = React.version;
-
-import Navbar from './components/layout/Navbar';
+import './App.css';
 import Header from './components/layout/Header';
-import SkillsSection from './components/sections/SkillsSection';
+import Footer from './components/layout/Footer';
+import SummarySection from './components/sections/SummarySection';
+import StrengthsWeaknessesSection from './components/sections/StrengthsWeaknessesSection';
+import LogoSection from './components/sections/LogoSection';
 import WorkExperienceSection from './components/sections/WorkExperienceSection';
+import SkillsSection from './components/sections/SkillsSection';
 import ProjectsSection from './components/sections/ProjectsSection';
 import MechanicalDrawingsSection from './components/sections/MechanicalDrawingsSection';
 import ExtraCurricularSection from './components/sections/ExtraCurricularSection';
-import Footer from './components/layout/Footer';
-import './App.css';
+import HowIWorkSection from './components/sections/HowIWorkSection';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
+    <div className="App font-sans">
       <Header />
-      <SkillsSection />
-      <WorkExperienceSection />
-      <ProjectsSection />
-      <MechanicalDrawingsSection />
-      <ExtraCurricularSection />
+      <main>
+        <SummarySection />
+        <StrengthsWeaknessesSection />
+        <LogoSection />
+        <WorkExperienceSection />
+        <SkillsSection />
+        <HowIWorkSection />
+        <ProjectsSection />
+        <MechanicalDrawingsSection />
+        <ExtraCurricularSection />
+      </main>
       <Footer />
     </div>
   );
