@@ -67,57 +67,29 @@ export const personalInfo = {
   title: "Mechanical Engineer",
   portfolioTitle: "Mubeen's Portfolio", // Added for the header
   bio: "I am a passionate mechanical engineer with expertise in design and analysis. My technical skills and creative problem-solving abilities allow me to develop innovative solutions to complex engineering challenges.",
-  email: "your.email@example.com", // Replace with your email
+  email: "a.shahul.mubeen@gmail.com", // Replace with your email
   linkedin: "https://www.linkedin.com/in/shahul-mubeen/",
   cvPath: "/docs/Mubeen Design CV.pdf",
-  profileImage: "/images/profile-placeholder.jpg", // Replace with your image path
+  profileImage: "/images/Headshot.jpg", // Replace with your image path
   headerBackground: "/images/header-background.jpg", // Can be image, GIF or video
   isHeaderBackgroundVideo: false, // Set to true if using a video
   summaryText: "Thanks for checking out my portfolio! Whether you're a recruiter, fellow engineer, friend, or lost stranger, I hope you enjoy the ride.",
   dreamJobsFlowchartImage: "/images/flowchart-placeholder.jpg", // Add your custom flowchart image here
 };
 
-export const dreamJobs: TimelineItem[] = [
-  {
-    title: "Baseball Star",
-    subtitle: "Farmer Phase, Vietnam"
-  },
-  {
-    title: "Computer Builder",
-    subtitle: "Being Useless Phase, WA"
-  },
-  {
-    title: "Astrophysicist",
-    subtitle: "College Phase, WA"
-  },
-  {
-    title: "Electrical Engineer",
-    subtitle: "College Phase, WA"
-  },
-  {
-    title: "Mechanical Engineer",
-    subtitle: "Being Useful Phase",
-    isCurrentPosition: true
-  },
-  {
-    title: "(Still taking suggestions)",
-    subtitle: "TBD, Earth (?)"
-  }
-];
-
 export const companyLogos: CompanyLogo[] = [
   {
-    name: "Google",
+    name: "TCS",
     image: "/images/logos/google-logo.png",
     link: "#"
   },
   {
-    name: "Apple",
+    name: "Amazon",
     image: "/images/logos/apple-logo.png",
     link: "#"
   },
   {
-    name: "SpaceX",
+    name: "Husqvarna",
     image: "/images/logos/spacex-logo.png",
     link: "#"
   },
@@ -126,54 +98,59 @@ export const companyLogos: CompanyLogo[] = [
 
 export const strengths: Strength[] = [
   {
-    text: "Addicted to machining."
+    text: "Addicted to Robotics"
   },
   {
-    text: "Never lost to Magnus Carlsen in chess."
+    text: "Like to design, build, and assemble everything"
   },
   {
-    text: "Like to design, build, and assemble everything."
+    text: "Never lost to Magnus Carlsen in chess"
   }
   // Add more strengths as needed
 ];
 
 export const weaknesses: Weakness[] = [
   {
-    text: "Addicted to machining."
+    text: "Addicted to Robotics"
   },
   {
-    text: "4th year in a row to be cursed with laptop problems."
+    text: "Physically incapable to sit on one place and not learn new things"
   },
   {
-    text: "Really like to disassemble and break things."
+    text: "Likes only one food"
   }
   // Add more weaknesses as needed
 ];
 
 export const skills: Skill[] = [
   {
-    name: "CAD Design",
+    name: "Computer-aided Design (CAD)",
     proficiencyLevel: "Expert",
-    description: "Proficient in creating detailed 3D models and technical drawings using industry-standard CAD software."
+    description: "Proficient in creating detailed 3D models and BOMs in SolidWorks, adhering to standards such as ISO, BS, and ANSI."
   },
   {
-    name: "Finite Element Analysis",
-    proficiencyLevel: "Advanced",
-    description: "Experienced in performing structural and thermal analyses to validate designs and optimize performance."
+    name: "Finite Element Analysis (FEA)",
+    proficiencyLevel: "Intermediate",
+    description: "Experienced in performing structural and thermal analyses in SolidWorks to validate designs and optimise performance."
   },
   {
-    name: "Mechanical Design",
-    proficiencyLevel: "Expert",
-    description: "Expert in designing mechanical components and systems with a focus on functionality, reliability, and manufacturability."
+    name: "Design for Manufacturing (DfM)",
+    proficiencyLevel: "Intermediate",
+    description: "Hands-on experience in designing mechanical components and systems with a focus on functionality, reliability, and manufacturability."
   },
   {
     name: "Python Programming",
     proficiencyLevel: "Proficient",
-    description: "Skilled in using Python for data analysis, automation, and solving engineering problems."
+    description: "Skilled in using Python for data analysis, automation, and solving engineering problems. Occassionally uses Python to automate all boring tasks at home."
+  },
+  {
+    name: "Robot Operating System (ROS2)",
+    proficiencyLevel: "Proficient",
+    description: "Experienced in programming ROS packages for custom-built robots. Well-versed in programming said robot brains to accompany human beings."
   },
   {
     name: "Project Management",
-    proficiencyLevel: "Advanced",
+    proficiencyLevel: "Intermediate",
     description: "Experienced in managing engineering projects from concept to completion, ensuring timely delivery and quality results."
   },
   // Add more skills as needed
@@ -181,11 +158,11 @@ export const skills: Skill[] = [
 
 export const workExperience: WorkExperience[] = [
   {
-    title: "Product Design Engineer",
-    company: "Google",
-    location: "Chicago, IL",
-    period: "Jan 2023 - Present",
-    description: "Pixel phone mechanical design",
+    title: "Assembly Operator",
+    company: "Husqvarna Group",
+    location: "Durham, UK",
+    period: "Feb 2024 - Present",
+    description: "Assembler of various series of Husqvarna's robotic lawnmowers",
     achievements: [
       "Designed and implemented a new cooling system that improved efficiency by 15%",
       "Led a team of 5 engineers in the successful delivery of 3 major projects",
@@ -195,11 +172,11 @@ export const workExperience: WorkExperience[] = [
     isVideo: false // Set to true if using a video or GIF
   },
   {
-    title: "iPhone PD Engineering Intern",
-    company: "Apple",
-    location: "Cupertino, CA",
-    period: "Sept 2021 - Sept 2022",
-    description: "Mechanical design and development of the iPhone 14 lineup",
+    title: "FC Associate",
+    company: "Amazon MME2",
+    location: "Durham, UK",
+    period: "Oct 2024 - Jan 2025",
+    description: "Redesign of an existing contingency cart to avoid shipment lags during peak",
     achievements: [
       "Developed 10+ mechanical designs that went into production",
       "Collaborated with cross-functional teams to ensure design feasibility",
@@ -209,11 +186,11 @@ export const workExperience: WorkExperience[] = [
     isVideo: false
   },
   {
-    title: "Starship Engineering Intern",
-    company: "SpaceX",
-    location: "Brownsville, TX",
-    period: "June - Sept 2021",
-    description: "Responsible for the build process of Starship nosecone and driving internal structures design.",
+    title: "Remote Design Engineer Intern",
+    company: "Tata Consultancy Services Ltd.",
+    location: "Chennai, IN",
+    period: "Nov 2020 - Mar 2022",
+    description: "Design, validate and simulate an experimental V6 engine design",
     achievements: [
       "Contributed to the design of a new assembly line component",
       "Performed stress analysis on critical components",
@@ -222,68 +199,26 @@ export const workExperience: WorkExperience[] = [
     backgroundImage: "/images/backgrounds/spacex-bg.jpg",
     isVideo: false
   },
-  {
-    title: "Manufacturing Engineering Intern",
-    company: "Blue Origin",
-    location: "Kent, WA",
-    period: "Sept - Dec 2020",
-    description: "Streamlined New Glenn carbon fiber panels assembly by conducting tolerance stack-up analyses and fixture design.",
-    achievements: [
-      "Optimized assembly processes reducing build time by 15%",
-      "Designed fixtures for complex carbon fiber components",
-      "Implemented quality control procedures that improved first-pass yield"
-    ],
-    backgroundImage: "/images/backgrounds/blueorigin-bg.jpg",
-    isVideo: false
-  },
-  {
-    title: "Product Design Integration Intern",
-    company: "Tesla",
-    location: "Fremont, CA",
-    period: "Mar - Sept 2020",
-    description: "Directly involved in product design cycle for Model S/X Refresh for solving packaging and integration issues.",
-    achievements: [
-      "Resolved critical packaging constraints in dashboard assembly",
-      "Collaborated with electrical and software teams on integrated systems",
-      "Developed innovative mounting solutions for new feature implementation"
-    ],
-    backgroundImage: "/images/backgrounds/tesla-bg.jpg",
-    isVideo: false
-  },
-  {
-    title: "Structures Engineering Intern",
-    company: "Boeing",
-    location: "Everett, WA",
-    period: "June - Sept 2019",
-    description: "Led the redesign and finite element analysis of a case-hardened gear for wing actuation.",
-    achievements: [
-      "Performed detailed FEA on critical structural components",
-      "Optimized gear design resulting in 12% weight reduction",
-      "Documented analysis methodology for future engineering reference"
-    ],
-    backgroundImage: "/images/backgrounds/boeing-bg.jpg",
-    isVideo: false
-  },
   // Add more work experiences as needed
 ];
 
 export const projects: Project[] = [
   {
-    title: "Automated Assembly System",
+    title: "Experimental V6 Engine Design (TCS)",
     description: "Designed and implemented an automated assembly system for manufacturing electronic components, resulting in a 40% increase in production efficiency.",
     technologies: ["CAD Design", "Pneumatics", "PLC Programming"],
     image: "/images/project1-placeholder.jpg", // Replace with actual image
     isVideo: false
   },
   {
-    title: "Lightweight Structural Component",
+    title: "Design and Fabrication of a Spherical Gear for Robot Joints (college project)",
     description: "Developed a lightweight structural component for aerospace applications using topology optimization, reducing weight by 25% while maintaining structural integrity.",
     technologies: ["FEA", "Topology Optimization", "Materials Engineering"],
     image: "/images/project2-placeholder.jpg", // Replace with actual image
     isVideo: false
   },
   {
-    title: "Energy Recovery System",
+    title: "Robot Arm that plays Chess with humans or themselves (personal, ongoing)",
     description: "Designed an energy recovery system for industrial processes that captures waste heat and converts it to usable energy, reducing energy consumption by 30%.",
     technologies: ["Thermodynamics", "Heat Transfer", "System Design"],
     image: "/images/project3-placeholder.jpg", // Replace with actual image
@@ -313,23 +248,23 @@ export const mechanicalDrawings: Drawing[] = [
 
 export const extraCurricular: ExtraCurricular[] = [
   {
-    title: "Engineering Volunteer Program",
+    title: "Freelance Filmmaker",
     description: "Participated in a volunteer program to teach engineering principles to high school students, mentoring over 20 students on various projects.",
-    period: "2020 - Present",
+    period: "2017 - Present",
     image: "/images/volunteer-placeholder.jpg", // Replace with actual image
     isVideo: false
   },
   {
-    title: "Robotics Competition Judge",
+    title: "Team Coordinator - MuFX",
     description: "Served as a technical judge for regional robotics competitions, evaluating design innovation and technical implementation.",
     period: "2021 - 2022",
     image: "/images/robotics-placeholder.jpg", // Replace with actual image
     isVideo: false
   },
   {
-    title: "Professional Association Member",
+    title: "PC Building",
     description: "Active member of the Society of Mechanical Engineers, participating in workshops and conferences to stay updated with industry trends.",
-    period: "2018 - Present",
+    period: "2021 - Present",
     image: "/images/association-placeholder.jpg", // Added image for Professional Association Member
     isVideo: false
   },
