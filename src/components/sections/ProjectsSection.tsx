@@ -15,11 +15,24 @@ const ProjectsSection: React.FC = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="h-64 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                />
+                {project.isVideo ? (
+                  <video 
+                    className="w-full h-full object-cover"
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                  >
+                    <source src={project.image} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  />
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-serif font-bold mb-3 text-secondary-900">{project.title}</h3>

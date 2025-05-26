@@ -16,11 +16,24 @@ const ExtraCurricularSection: React.FC = () => {
             >
               {activity.image && (
                 <div className="h-48 overflow-hidden">
-                  <img 
-                    src={activity.image} 
-                    alt={activity.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                  />
+                  {activity.isVideo ? (
+                    <video 
+                      className="w-full h-full object-cover"
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline
+                    >
+                      <source src={activity.image} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <img 
+                      src={activity.image} 
+                      alt={activity.title} 
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                    />
+                  )}
                 </div>
               )}
               <div className="p-6">

@@ -1,173 +1,296 @@
 # Portfolio Website Customization Guide
 
-This guide will help you customize your luxury engineering portfolio website. The site has been designed with a premium aesthetic inspired by thanhvtran.com, featuring elegant typography, refined color schemes, and smooth animations.
+This guide will help you customize your redesigned portfolio website to match your personal information, preferences, and style.
 
 ## Table of Contents
-1. [File Structure](#file-structure)
-2. [Editing Your Content](#editing-your-content)
-3. [Customizing Colors](#customizing-colors)
-4. [Changing Fonts](#changing-fonts)
-5. [Adding Your Images](#adding-your-images)
-6. [Adding Mechanical Drawings](#adding-mechanical-drawings)
-7. [Building and Testing Locally](#building-and-testing-locally)
+1. [Editing Content](#editing-content)
+2. [Customizing Sections](#customizing-sections)
+3. [Adding Your Images](#adding-your-images)
+4. [Styling and Theming](#styling-and-theming)
+5. [Testing Your Changes](#testing-your-changes)
 
-## File Structure
+## Editing Content
 
-The most important files and directories in your portfolio website:
+All content for your portfolio is stored in a single file: `src/data/portfolioData.ts`. This makes it easy to update your information without having to modify any React components.
 
-```
-portfolio-enhanced/
-├── public/              # Static assets (images, documents)
-│   ├── docs/            # Your CV and mechanical drawings
-│   └── images/          # Your photos and images
-├── src/
-│   ├── components/      # React components
-│   │   ├── layout/      # Layout components (Header, Footer, Navbar)
-│   │   └── sections/    # Content sections
-│   ├── data/            # Your portfolio content
-│   │   └── portfolioData.ts  # All your editable content
-│   ├── App.tsx          # Main application component
-│   └── index.css        # Global styles
-├── tailwind.config.js   # Tailwind CSS configuration
-└── index.html           # HTML entry point
-```
+### Personal Information
 
-## Editing Your Content
-
-All your content is stored in a single file: `src/data/portfolioData.ts`
-
-This makes it easy to update your information without touching the code structure. Open this file in any text editor to modify:
-
-- Personal information (name, title, bio, links)
-- Skills and proficiency levels
-- Work experience
-- Projects
-- Mechanical drawings
-- Extracurricular activities
-
-Example of editing personal information:
+Edit the `personalInfo` object to update your name, title, bio, contact information, and summary text:
 
 ```typescript
 export const personalInfo = {
-  name: "Your Name",  // Change to your name
-  title: "Mechanical Engineer",  // Change to your title
-  bio: "Your professional bio goes here...",  // Update your bio
-  email: "your.email@example.com",  // Update your email
-  linkedin: "https://www.linkedin.com/in/your-profile/",  // Your LinkedIn URL
-  cvPath: "/docs/Your-CV.pdf",  // Path to your CV file
-  profileImage: "/images/your-profile-photo.jpg",  // Path to your profile image
+  name: "Mubeen A", // Name displayed in the footer
+  title: "Mechanical Engineer",
+  portfolioTitle: "Mubeen's Portfolio", // Text displayed in the top-left of the header
+  bio: "Your bio text here...",
+  email: "your.email@example.com",
+  linkedin: "https://www.linkedin.com/in/your-profile/",
+  cvPath: "/docs/Your-CV.pdf",
+  profileImage: "/images/your-profile-image.jpg", // Your headshot image
+  headerBackground: "/images/header-background.jpg", // Can be image, GIF or video
+  isHeaderBackgroundVideo: false, // Set to true if using a video for header background
+  summaryText: "Thanks for checking out my portfolio! Whether you're a recruiter...",
+  dreamJobsFlowchartImage: "/images/flowchart-placeholder.jpg", // Your custom flowchart image
 };
 ```
 
-## Customizing Colors
+### Timeline/Dream Jobs
 
-The website uses a luxury color scheme that you can customize in `tailwind.config.js`:
+Edit the `dreamJobs` array to update your career timeline:
 
-1. Open `tailwind.config.js`
-2. Find the `colors` section
-3. Modify the color values to match your preferences
-
-```javascript
-colors: {
-  primary: {
-    // These are blue shades - change to your preferred primary color
-    500: '#0ea5e9',  // Main primary color
-    600: '#0284c7',  // Darker shade for hover states
-    // other shades...
+```typescript
+export const dreamJobs: TimelineItem[] = [
+  {
+    title: "Job Title",
+    subtitle: "Phase Description"
   },
-  secondary: {
-    // These are gray/slate shades - change to your preferred secondary color
-    900: '#0f172a',  // Very dark (used for text)
-    800: '#1e293b',  // Dark (used for headings)
-    // other shades...
+  // Add more timeline items
+  {
+    title: "Current Position",
+    subtitle: "Current Phase",
+    isCurrentPosition: true  // Mark your current position
+  }
+];
+```
+
+### Strengths and Weaknesses
+
+Edit the `strengths` and `weaknesses` arrays:
+
+```typescript
+export const strengths: Strength[] = [
+  {
+    text: "Your strength point here."
   },
-  // other color definitions...
+  // Add more strengths
+];
+
+export const weaknesses: Weakness[] = [
+  {
+    text: "Your weakness point here."
+  },
+  // Add more weaknesses
+];
+```
+
+### Company Logos
+
+Edit the `companyLogos` array to update the logos displayed in the experience section:
+
+```typescript
+export const companyLogos: CompanyLogo[] = [
+  {
+    name: "Company Name",
+    image: "/images/logos/company-logo.png",
+    link: "https://company-website.com"
+  },
+  // Add more company logos
+];
+```
+
+### Skills
+
+Edit the `skills` array to update your technical skills with descriptive proficiency levels:
+
+```typescript
+export const skills: Skill[] = [
+  {
+    name: "Skill Name",
+    proficiencyLevel: "Expert", // Use descriptive terms like "Beginner", "Intermediate", "Advanced", "Expert", etc.
+    description: "Description of your skill and experience with it."
+  },
+  // Add more skills
+];
+```
+
+### Work Experience
+
+Edit the `workExperience` array to update your work history:
+
+```typescript
+export const workExperience: WorkExperience[] = [
+  {
+    title: "Job Title",
+    company: "Company Name",
+    location: "City, Country",
+    period: "Start Date - End Date",
+    description: "Brief description of your role",
+    achievements: [
+      "Achievement 1",
+      "Achievement 2",
+      "Achievement 3"
+    ],
+    backgroundImage: "/images/backgrounds/company-bg.jpg", // Can be image, GIF or video
+    isVideo: false // Set to true if using a video or GIF
+  },
+  // Add more work experiences
+];
+```
+
+### Projects, Drawings, and Extracurricular Activities
+
+Similarly, edit the `projects`, `mechanicalDrawings`, and `extraCurricular` arrays to update those sections:
+
+```typescript
+export const projects: Project[] = [
+  {
+    title: "Project Title",
+    description: "Project description...",
+    technologies: ["Technology 1", "Technology 2"],
+    image: "/images/project-image.jpg", // Can be image, GIF or video
+    isVideo: false, // Set to true if using a video or GIF
+    link: "https://project-link.com" // Optional
+  },
+  // Add more projects
+];
+
+export const extraCurricular: ExtraCurricular[] = [
+  {
+    title: "Activity Title",
+    description: "Activity description...",
+    period: "Time period",
+    image: "/images/activity-image.jpg", // Can be image, GIF or video
+    isVideo: false // Set to true if using a video or GIF
+  },
+  // Add more activities
+];
+```
+
+## Customizing Sections
+
+### Reordering Sections
+
+To change the order of sections, edit the `App.tsx` file and reorder the components:
+
+```jsx
+function App() {
+  return (
+    <div className="App font-sans">
+      <Header />
+      <main>
+        <SummarySection />
+        <StrengthsWeaknessesSection />
+        {/* Reorder these components as needed */}
+        <LogoSection />
+        <WorkExperienceSection />
+        <SkillsSection />
+        <HowIWorkSection />
+        <ProjectsSection />
+        <MechanicalDrawingsSection />
+        <ExtraCurricularSection />
+      </main>
+      <Footer />
+    </div>
+  );
 }
 ```
 
-## Changing Fonts
+### Hiding Sections
 
-The website uses elegant Google Fonts:
-- Playfair Display (serif) for headings
-- Raleway (sans-serif) for body text
+To hide a section, simply comment it out in `App.tsx`:
 
-To change fonts:
-
-1. Open `src/index.css`
-2. Find the Google Fonts import at the top:
-   ```css
-   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;...');
-   ```
-3. Replace with your preferred Google Fonts
-4. Update the font-family references in the CSS below
-
-Also update the font family in `tailwind.config.js`:
-
-```javascript
-fontFamily: {
-  sans: ['Raleway', 'sans-serif'],  // Change to your body font
-  serif: ['Playfair Display', 'serif'],  // Change to your heading font
-},
+```jsx
+function App() {
+  return (
+    <div className="App font-sans">
+      <Header />
+      <main>
+        <SummarySection />
+        <StrengthsWeaknessesSection />
+        <LogoSection />
+        <WorkExperienceSection />
+        <SkillsSection />
+        {/* <HowIWorkSection /> */} {/* This section is now hidden */}
+        <ProjectsSection />
+        <MechanicalDrawingsSection />
+        <ExtraCurricularSection />
+      </main>
+      <Footer />
+    </div>
+  );
+}
 ```
 
 ## Adding Your Images
 
-Replace the placeholder images with your own:
+### Profile Image
 
-1. Add your images to the `public/images/` directory
-2. Update the image paths in `src/data/portfolioData.ts`
+1. Add your profile image to the `public/images/` directory
+2. Update the `profileImage` path in the `personalInfo` object
 
-For your profile photo:
-```typescript
-export const personalInfo = {
-  // other fields...
-  profileImage: "/images/your-profile-photo.jpg",  // Update this path
-};
-```
+### Company Logos
 
-For project images:
-```typescript
-export const projects = [
-  {
-    // other fields...
-    image: "/images/your-project-image.jpg",  // Update this path
+1. Add your company logos to the `public/images/logos/` directory
+2. Update the image paths in the `companyLogos` array
+
+### Background Images
+
+1. Add background images for work experiences to the `public/images/backgrounds/` directory
+2. Update the `backgroundImage` paths in the `workExperience` array
+
+### Project Images
+
+1. Add project images to the `public/images/` directory
+2. Update the image paths in the `projects` array
+
+## Styling and Theming
+
+### Colors
+
+The main colors are defined in the `tailwind.config.js` file. You can modify these to match your preferred color scheme:
+
+```js
+theme: {
+  extend: {
+    colors: {
+      primary: {
+        50: '#f0f9ff',
+        100: '#e0f2fe',
+        // ... other shades
+        900: '#0c4a6e',
+      },
+      secondary: {
+        50: '#f8fafc',
+        100: '#f1f5f9',
+        // ... other shades
+        900: '#0f172a',
+      },
+      // Add more custom colors as needed
+    },
   },
-  // other projects...
-];
+},
 ```
 
-## Adding Mechanical Drawings
+### Fonts
 
-To add your mechanical drawings:
+Fonts are imported in the `src/index.css` file. You can change these to your preferred fonts:
 
-1. Add your drawing files (PDF format recommended) to the `public/docs/` directory
-2. Update the drawing references in `src/data/portfolioData.ts`:
+```css
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
 
-```typescript
-export const mechanicalDrawings = [
-  {
-    title: "Your Drawing Title",
-    description: "Description of your drawing...",
-    filename: "your-drawing-file.pdf"  // Must match the filename in public/docs/
-  },
-  // other drawings...
-];
+/* Then update the font family in tailwind.config.js */
 ```
 
-## Building and Testing Locally
+## Testing Your Changes
 
-To test your changes locally:
+After making changes:
 
-1. Open a terminal in your project directory
-2. Run `npm install` to install dependencies (first time only)
-3. Run `npm run dev` to start the development server
-4. Open your browser to the URL shown in the terminal (usually http://localhost:5173)
-5. Make changes and see them update in real-time
+1. Run the development server:
+```
+npm run dev
+```
 
-When you're satisfied with your changes, build the production version:
+2. View your site at `http://localhost:5173` (or the port shown in your terminal)
 
+3. Make sure everything looks good on different screen sizes by resizing your browser window
+
+4. When you're satisfied with your changes, build for production:
 ```
 npm run build
 ```
 
-This will create a `dist` folder with your optimized website, ready for deployment to Netlify as described in the NETLIFY_DEPLOYMENT.md guide.
+5. Deploy to Netlify following the instructions in the NETLIFY_DEPLOYMENT.md guide
+
+## Need More Help?
+
+If you need to make more complex customizations, you can edit the React components directly in the `src/components/` directory. Each section of your portfolio has its own component file that you can modify as needed.

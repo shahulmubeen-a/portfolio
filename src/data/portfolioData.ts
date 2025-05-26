@@ -14,7 +14,8 @@ export interface WorkExperience {
   period: string;
   description: string;
   achievements: string[];
-  backgroundImage?: string; // Added for low opacity background images
+  backgroundImage?: string; // Can be image, GIF or video
+  isVideo?: boolean; // Flag to indicate if backgroundImage is a video
 }
 
 export interface Project {
@@ -22,6 +23,7 @@ export interface Project {
   description: string;
   technologies: string[];
   image: string;
+  isVideo?: boolean; // Flag to indicate if image is a video
   link?: string;
 }
 
@@ -36,6 +38,7 @@ export interface ExtraCurricular {
   description: string;
   period?: string;
   image?: string;
+  isVideo?: boolean; // Flag to indicate if image is a video
 }
 
 export interface Strength {
@@ -49,6 +52,7 @@ export interface Weakness {
 export interface CompanyLogo {
   name: string;
   image: string;
+  isVideo?: boolean; // Flag to indicate if image is a video
   link?: string;
 }
 
@@ -59,15 +63,18 @@ export interface TimelineItem {
 }
 
 export const personalInfo = {
-  name: "Shahul Mubeen",
+  name: "Mubeen A", // Updated from "Shahul Mubeen" to "Mubeen A"
   title: "Mechanical Engineer",
+  portfolioTitle: "Mubeen's Portfolio", // Added for the header
   bio: "I am a passionate mechanical engineer with expertise in design and analysis. My technical skills and creative problem-solving abilities allow me to develop innovative solutions to complex engineering challenges.",
   email: "your.email@example.com", // Replace with your email
   linkedin: "https://www.linkedin.com/in/shahul-mubeen/",
   cvPath: "/docs/Mubeen Design CV.pdf",
   profileImage: "/images/profile-placeholder.jpg", // Replace with your image path
+  headerBackground: "/images/header-background.jpg", // Can be image, GIF or video
+  isHeaderBackgroundVideo: false, // Set to true if using a video
   summaryText: "Thanks for checking out my portfolio! Whether you're a recruiter, fellow engineer, friend, or lost stranger, I hope you enjoy the ride.",
-  howIWorkText: "I approach engineering challenges with a blend of analytical thinking and creative problem-solving. My process typically involves thorough research, collaborative brainstorming, iterative design, and rigorous testing. I believe in learning continuously and adapting my approach based on feedback and new information. Communication is central to my work style, ensuring all stakeholders remain aligned throughout the project lifecycle."
+  dreamJobsFlowchartImage: "/images/flowchart-placeholder.jpg", // Add your custom flowchart image here
 };
 
 export const dreamJobs: TimelineItem[] = [
@@ -184,7 +191,8 @@ export const workExperience: WorkExperience[] = [
       "Led a team of 5 engineers in the successful delivery of 3 major projects",
       "Reduced manufacturing costs by 20% through design optimization"
     ],
-    backgroundImage: "/images/backgrounds/google-bg.jpg"
+    backgroundImage: "/images/backgrounds/google-bg.jpg",
+    isVideo: false // Set to true if using a video or GIF
   },
   {
     title: "iPhone PD Engineering Intern",
@@ -197,7 +205,8 @@ export const workExperience: WorkExperience[] = [
       "Collaborated with cross-functional teams to ensure design feasibility",
       "Implemented design improvements that increased product lifespan by 30%"
     ],
-    backgroundImage: "/images/backgrounds/apple-bg.jpg"
+    backgroundImage: "/images/backgrounds/apple-bg.jpg",
+    isVideo: false
   },
   {
     title: "Starship Engineering Intern",
@@ -210,7 +219,8 @@ export const workExperience: WorkExperience[] = [
       "Performed stress analysis on critical components",
       "Created detailed technical documentation for manufacturing"
     ],
-    backgroundImage: "/images/backgrounds/spacex-bg.jpg"
+    backgroundImage: "/images/backgrounds/spacex-bg.jpg",
+    isVideo: false
   },
   {
     title: "Manufacturing Engineering Intern",
@@ -223,7 +233,8 @@ export const workExperience: WorkExperience[] = [
       "Designed fixtures for complex carbon fiber components",
       "Implemented quality control procedures that improved first-pass yield"
     ],
-    backgroundImage: "/images/backgrounds/blueorigin-bg.jpg"
+    backgroundImage: "/images/backgrounds/blueorigin-bg.jpg",
+    isVideo: false
   },
   {
     title: "Product Design Integration Intern",
@@ -236,7 +247,8 @@ export const workExperience: WorkExperience[] = [
       "Collaborated with electrical and software teams on integrated systems",
       "Developed innovative mounting solutions for new feature implementation"
     ],
-    backgroundImage: "/images/backgrounds/tesla-bg.jpg"
+    backgroundImage: "/images/backgrounds/tesla-bg.jpg",
+    isVideo: false
   },
   {
     title: "Structures Engineering Intern",
@@ -249,7 +261,8 @@ export const workExperience: WorkExperience[] = [
       "Optimized gear design resulting in 12% weight reduction",
       "Documented analysis methodology for future engineering reference"
     ],
-    backgroundImage: "/images/backgrounds/boeing-bg.jpg"
+    backgroundImage: "/images/backgrounds/boeing-bg.jpg",
+    isVideo: false
   },
   // Add more work experiences as needed
 ];
@@ -259,19 +272,22 @@ export const projects: Project[] = [
     title: "Automated Assembly System",
     description: "Designed and implemented an automated assembly system for manufacturing electronic components, resulting in a 40% increase in production efficiency.",
     technologies: ["CAD Design", "Pneumatics", "PLC Programming"],
-    image: "/images/project1-placeholder.jpg" // Replace with actual image
+    image: "/images/project1-placeholder.jpg", // Replace with actual image
+    isVideo: false
   },
   {
     title: "Lightweight Structural Component",
     description: "Developed a lightweight structural component for aerospace applications using topology optimization, reducing weight by 25% while maintaining structural integrity.",
     technologies: ["FEA", "Topology Optimization", "Materials Engineering"],
-    image: "/images/project2-placeholder.jpg" // Replace with actual image
+    image: "/images/project2-placeholder.jpg", // Replace with actual image
+    isVideo: false
   },
   {
     title: "Energy Recovery System",
     description: "Designed an energy recovery system for industrial processes that captures waste heat and converts it to usable energy, reducing energy consumption by 30%.",
     technologies: ["Thermodynamics", "Heat Transfer", "System Design"],
-    image: "/images/project3-placeholder.jpg" // Replace with actual image
+    image: "/images/project3-placeholder.jpg", // Replace with actual image
+    isVideo: false
   },
   // Add more projects as needed
 ];
@@ -300,18 +316,22 @@ export const extraCurricular: ExtraCurricular[] = [
     title: "Engineering Volunteer Program",
     description: "Participated in a volunteer program to teach engineering principles to high school students, mentoring over 20 students on various projects.",
     period: "2020 - Present",
-    image: "/images/volunteer-placeholder.jpg" // Replace with actual image
+    image: "/images/volunteer-placeholder.jpg", // Replace with actual image
+    isVideo: false
   },
   {
     title: "Robotics Competition Judge",
     description: "Served as a technical judge for regional robotics competitions, evaluating design innovation and technical implementation.",
     period: "2021 - 2022",
-    image: "/images/robotics-placeholder.jpg" // Replace with actual image
+    image: "/images/robotics-placeholder.jpg", // Replace with actual image
+    isVideo: false
   },
   {
     title: "Professional Association Member",
     description: "Active member of the Society of Mechanical Engineers, participating in workshops and conferences to stay updated with industry trends.",
-    period: "2018 - Present"
+    period: "2018 - Present",
+    image: "/images/association-placeholder.jpg", // Added image for Professional Association Member
+    isVideo: false
   },
   // Add more extracurricular activities as needed
 ];

@@ -11,7 +11,6 @@ import SkillsSection from './components/sections/SkillsSection';
 import ProjectsSection from './components/sections/ProjectsSection';
 import MechanicalDrawingsSection from './components/sections/MechanicalDrawingsSection';
 import ExtraCurricularSection from './components/sections/ExtraCurricularSection';
-import HowIWorkSection from './components/sections/HowIWorkSection';
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
         <LogoSection />
         <WorkExperienceSection />
         <SkillsSection />
-        <HowIWorkSection />
         <ProjectsSection />
         <MechanicalDrawingsSection />
         <ExtraCurricularSection />

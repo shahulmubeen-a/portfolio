@@ -5,7 +5,6 @@ const WorkExperienceSection: React.FC = () => {
   return (
     <section id="experience" className="py-16 px-4 md:px-8 bg-gray-50">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold mb-12 text-center text-secondary-900">WORK EXPERIENCE</h2>
         
         <div className="space-y-4"> {/* Reduced from space-y-8 to space-y-4 */}
           {workExperience.map((job, index) => (
@@ -13,16 +12,32 @@ const WorkExperienceSection: React.FC = () => {
               key={index} 
               className="relative overflow-hidden rounded-lg shadow-md bg-white"
             >
-              {/* Background image with low opacity */}
+              {/* Background image/video with low opacity */}
               {job.backgroundImage && (
-                <div 
-                  className="absolute inset-0 z-0 opacity-10" 
-                  style={{
-                    backgroundImage: `url(${job.backgroundImage})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }}
-                ></div>
+                <div className="absolute inset-0 z-0 opacity-10">
+                  {job.isVideo ? (
+                    <video 
+                      className="w-full h-full object-cover"
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline
+                    >
+                      <source src={job.backgroundImage} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <div 
+                      style={{
+                        backgroundImage: `url(${job.backgroundImage})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        width: '100%',
+                        height: '100%'
+                      }}
+                    ></div>
+                  )}
+                </div>
               )}
               
               <div className="relative z-10 p-6 md:p-8">
